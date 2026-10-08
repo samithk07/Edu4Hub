@@ -1,0 +1,19 @@
+{
+  "name": "@edu4hub/database",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "mssql": "11.0.2"
+  },
+  "devDependencies": {
+    "@types/mssql": "9.1.11",
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}

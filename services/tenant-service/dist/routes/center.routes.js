@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const center_controller_1 = require("../controllers/center.controller");
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const rbac_middleware_1 = require("../middleware/rbac.middleware");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_1.authenticate);
+router.use((0, rbac_middleware_1.authorize)("SUPER_ADMIN"));
+router.post("/", center_controller_1.createCenterController);
+router.get("/", center_controller_1.getAllCentersController);
+router.get("/:id", center_controller_1.getCenterByIdController);
+router.patch("/:id", center_controller_1.updateCenterController);
+router.delete("/:id", center_controller_1.deleteCenterController);
+exports.default = router;
